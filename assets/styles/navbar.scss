@@ -27,13 +27,17 @@
     }
 }
 
-.avatar{
+#avatarLink {
+    display: flex;
+}
+
+a .avatar{
     width: 3rem;
-    margin-top: 1rem;
+    //margin-top: 1rem;
     border-radius: 50%;
 }
 
-a {
+ul a {
     text-decoration: none;
     color: $primary;
     position: relative;
@@ -45,10 +49,11 @@ a {
     margin-left: 15px;
 }
 #nav-ul {
-    margin-left: 62px;
-    @media screen and (max-width: 560px) {
-        margin-left: 54px;
-    }
+    //margin-left: 62px;
+    //@media screen and (max-width: 560px) {
+    //    margin-left: 54px;
+    //}
+    margin-bottom: 0;
     li {
         list-style-type: none;
         font-family: $text;
