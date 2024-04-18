@@ -1,8 +1,13 @@
 #secondPart {
   color: $primary;
+  display: flex;
+  justify-content: center;
+}
+
+.aboutMe{
   position: relative;
   max-width: 800px;
-  margin: 50px auto;
+  margin: 55px auto;
   padding: 7rem 50px 50px;
   border: 2px solid #FFB6C1;
   border-radius: 10px;
@@ -11,23 +16,21 @@
 
 #secondPart h1,
 #secondPart .qui-suis-je {
-  text-align: center;
+  margin: 55px auto;
 }
 
 #secondPart h1 {
   position: absolute;
-  top: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  // margin 55px + (72 / 2) span font-size
+  margin-top: 91px;
+  left: 0;
   z-index: 1;
-
+  padding: 0;
 }
 
 #secondPart .qui-suis-je {
   position: absolute;
-  top: 3rem;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 0;
   opacity: 0.2;
   font-size: 72px;
 }
@@ -44,4 +47,10 @@
 .dev-web {
   font-weight: bold;
   color: $secondary;
+}
+
+.aboutMe a{
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
 }

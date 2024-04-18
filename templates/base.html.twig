@@ -14,6 +14,7 @@
 
         {% block javascripts %}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
+            <script type="module" src="{{ asset('js/animationText.js') }}"></script>
         {% endblock %}
     </head>
     <body>

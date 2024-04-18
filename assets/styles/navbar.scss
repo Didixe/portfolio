@@ -4,14 +4,14 @@
     justify-content: center;
     width: 45rem;
     height: 80px;
-    background: transparent;
+    background: rgba(12, 12, 12, 0.62);
     position: fixed;
-    //z-index: 2;
     left: 0;
     right: 0;
     margin: 30px auto 0;
     border-radius: 10px;
     box-shadow: 0 0 1.5px 1px $primary, 0 0 1.5px 1px $primary inset;
+    z-index: 3;
     @media screen and (max-width: 780px) {
         width: 550px;
     }

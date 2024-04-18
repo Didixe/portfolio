@@ -1,4 +1,5 @@
 import './bootstrap.js';
+import './js/animationText';
 import 'bootstrap/dist/css/bootstrap.min.css';
 /*
  * Welcome to your app's main JavaScript file!
@@ -14,5 +15,6 @@ import avatar from './images/avatar.jpeg';
 
 let html = ` < img src = "${avatar}" alt = "avatar github" > `;
 
-console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
-''
+// console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');
+
+
