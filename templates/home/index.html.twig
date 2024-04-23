@@ -49,17 +49,44 @@
     </div>
 
     <div id="thirdPart">
-        <h1>Portfolio</h1>
+        <h3>Portfolio</h3>
 
         <div class="project">
-            <div class="div1"> <img src="{{ asset('images/Site_Vitrine_Baratie.png') }}" alt="Photo et lien du site vitrine du restaurant le Baratie"> </div>
-            <div class="div2"> <img src="{{ asset('images/photoPortfolio.jpg') }}" alt="ma Photo"> d2 géocode </div>
-            <div class="div3"> <img src="{{ asset('images/photoPortfolio.jpg') }}" alt="ma Photo"> d3 escape game</div>
-            <div class="div4"> <img src="{{ asset('images/photoPortfolio.jpg') }}" alt="ma Photo"> d4 projet choko </div>
-            <div class="div5"> <img src="{{ asset('images/photoPortfolio.jpg') }}" alt="ma Photo"> d5 bientot </div>
+            <a href="#" class="picturesHover div1" title="site vitrine" data-content="Restaurant Baratie"><img src="{{ asset('images/Site_Vitrine_Baratie.png') }}" alt="Photo et lien du site vitrine du restaurant le Baratie"></a>
+            <a href="#" class="picturesHover div2" title="application" data-content="Géocode"><img src="{{ asset('images/geocode.png') }}" alt="Photo et lien du site Géocode"></a>
+            <a href="#" class="picturesHover div3" title="jeux" data-content="escape game"><img src="{{ asset('images/EscapeGameMini.png') }}" alt="Photo et lien du jeux EscapeGame"></a>
+            <a href="#" class="picturesHover div4" title="site vitrine" data-content="MistralPan"><img src="{{ asset('images/MistralPan.png') }}" alt="Photo et lien du site vitrine de MistralPan"></a>
+            <div class="div5">bientot ...</div>
         </div>
     </div>
 
+    <div id="fourthPart">
+        <h4>me contacter</h4>
+        <div class="aboutMe">
+            <p>Vous pouvez me contacter via le formulaire ou les liens proposés, je vous répondrai dans les meilleurs délais.</p>
+            <div class="form">
+                {{ form_start(form) }}
+{#                <div class="form-group">#}
+{#                    {{ form_label(form.Name) }}#}
+{#                    <br>#}
+{#                    {{ form_widget(form.Name) }}#}
+{#                </div>#}
+                <div class="form-group">
+                    <div style="display: block; margin-left: 10px; margin-bottom: -20px; ">
+                        {{ form_label(form.Name) }}
+                    </div>
+                    {{ form_widget(form.Name, {'attr': {'class': 'input input-width'}}) }}
+                </div>
+                {{ form_row(form.company) }}
+                {{ form_row(form.phone) }}
+                {{ form_row(form.Email) }}
+                {{ form_row(form.message) }}
+                <button class="btn btn-outline-primary btn-lg center" type="submit">Envoyer</button>
+                {{ form_end(form) }}
+            </div>
+            <div class="info"></div>
+        </div>
+    </div>
 
 
 {% endblock %}

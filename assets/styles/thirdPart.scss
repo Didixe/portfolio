@@ -5,9 +5,11 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
 }
 
-#thirdPart h1{
+#thirdPart h3{
+  font-size: 3.5rem;
   margin: 55px auto;
 }
 
@@ -17,21 +19,73 @@
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  width: 55vw;
+  height: 60vh;
+  margin-bottom: 55px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 10px;
 }
 
-.project img{
-  width: 12rem;
-  height: 24rem;
-}
-
-.div1 img {
+.project img {
   width: 100%;
   height: 100%;
 }
-
 
 .div1 { grid-area: 1 / 1 / 3 / 2; }
 .div2 { grid-area: 1 / 2 / 6 / 3; }
 .div3 { grid-area: 1 / 3 / 4 / 4; }
 .div4 { grid-area: 3 / 1 / 6 / 2; }
 .div5 { grid-area: 4 / 3 / 6 / 4; }
+
+.div5{
+  background-color: $dark-gray;
+  color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  text-transform: capitalize;
+}
+
+.picturesHover {
+  position: relative;
+  text-align: center;
+}
+
+.picturesHover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.8s, color 0.8s;
+  z-index: 1;
+  font-size: 2rem;
+}
+
+.picturesHover:hover::after {
+  /* Utilise \A pour un saut de ligne */
+  content: attr(title) "\A" attr(data-content);
+  /* Permet d'interpréter les sauts de ligne */
+  white-space: pre;
+  background-color: $dark-gray;
+  color: $primary;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.picturesHover:hover {
+  color: transparent;
+}
+
+.div1 .picturesHover::after {
+  content: 'Site Vitrine';
+}
