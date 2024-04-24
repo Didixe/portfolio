@@ -8,6 +8,9 @@
   justify-content: center;
   flex-direction: column;
   margin: 0 auto;
+  @media screen and (max-width: 560px) {
+    background-size: 90vh;
+  }
 }
 
 #firstPart .principalTitle{

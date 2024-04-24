@@ -2,37 +2,32 @@
 
 namespace App\Controller;
 
-
 use App\Form\ContactType;
+use App\Service\EmailService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Mailer\MailerInterface;
-use Symfony\Component\Mime\Email;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class MailerController extends AbstractController
 {
     #[Route('/', name: 'contact')]
-    public function contactForm(Request $request, MailerInterface $mailer)
+    public function contactForm(Request $request, EmailService $emailService): Response
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()) {
             $formData = $form->getData();
 
-            $email = (new Email())
-                ->from($formData['Email'])
-                ->to('adeline.gilet33@gmail.com')
-                ->subject($formData['Name'])
-                ->text($formData['message']);
-
-            $mailer->send($email);
+            // Envoi de l'e-mail en utilisant le service EmailService
+            $emailService->sendContactEmail($formData);
 
             $this->addFlash('success', 'Votre message a été envoyé avec succès !');
 
             return $this->redirectToRoute('contact');
         }
+
         return $this->render('home/index.html.twig', [
             'form' => $form->createView(),
         ]);

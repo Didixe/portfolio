@@ -1,0 +1,14 @@
+footer{
+  color: $dark-gray;
+  background: $primary;
+  height: 4rem;
+}
+
+footer p{
+  text-align: center;
+  padding: 1.3rem;
+  font-size: 1rem;
+  @media screen and (max-width: 780px){
+    font-size: 0.8rem;
+  }
+}

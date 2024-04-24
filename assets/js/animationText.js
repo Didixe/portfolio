@@ -14,10 +14,10 @@ function animateElements() {
     animationInProgress = true;
 
     h1.style.transform = `translateX(calc(50vw - ${halfWidthH1}px))`;
-    h1.style.transition = 'transform 3s ease'; // Animation de 1 seconde avec une transition de type ease
+    h1.style.transition = 'transform 3s ease'; // Animation de 3 seconde avec une transition de type ease
 
     span.style.transform = `translateX(calc(-50vw + ${halfWidthSpan}px))`;
-    span.style.transition = 'transform 3s ease'; // Animation de 1 seconde avec une transition de type ease
+    span.style.transition = 'transform 3s ease'; // Animation de 3 seconde avec une transition de type ease
 }
 
 // Fonction pour annuler l'animation
